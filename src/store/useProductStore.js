@@ -29,11 +29,11 @@ export const useProductStore = create((set, get) => ({
       await api.post(`${BASE_URL}/api/products`, formData);
       await get().fetchProducts();
       get().resetForm();
-      toast.success("Product added successfully");
+      toast.success("Producto Agregado Exitosamente");
       document.getElementById("add_product_modal").close();
     } catch (error) {
       console.log("Error in addProduct function", error);
-      toast.error("Something went wrong");
+      toast.error("Algo Salio Mal");
     } finally {
       set({ loading: false });
     }
@@ -71,10 +71,10 @@ export const useProductStore = create((set, get) => ({
     try {
       await api.delete(`${BASE_URL}/api/products/${id}`);
       set((prev) => ({ products: prev.products.filter((product) => product.id_product !== id) }));
-      toast.success("Product deleted successfully");
+      toast.success("Producto eliminado exitosamente");
     } catch (error) {
       console.log("Error in deleteProduct function", error);
-      toast.error("Something went wrong");
+      toast.error("Algo Salió Mal");
     } finally {
       set({ loading: false });
     }
@@ -86,9 +86,9 @@ export const useProductStore = create((set, get) => ({
       const { formData } = get();
       const response = await api.put(`${BASE_URL}/api/products/${id}`, formData);
       set({ currentProduct: response.data.data });
-      toast.success("Product updated successfully");
+      toast.success("Producto Actualizado exitosamente");
     } catch (error) {
-      toast.error("Something went wrong");
+      toast.error("Algo Salió Mal");
       console.log("Error in updateProduct function", error);
     } finally {
       set({ loading: false });
@@ -98,10 +98,7 @@ export const useProductStore = create((set, get) => ({
   fetchProduct: async (id) => {
     set({ loading: true });
     try {
-      const response =
-        await api.get(
-          `/api/products/${id}`
-        );
+      const response =await api.get(`/api/products/${id}`);
       console.log(response.data);
       set({
         currentProduct:

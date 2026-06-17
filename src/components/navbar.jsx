@@ -46,7 +46,7 @@ function Navbar() {
                     to-secondary
                   "
                 >
-                  Brawhalla Authentication
+                  ATLAS
                 </span>
               </div>
             </Link>

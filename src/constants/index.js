@@ -23,11 +23,11 @@ export const THEMES = [
   {
     name: "cyberpunk",
     label: "Cyberpunk",
-    colors: ["#FF00FF", "#00FFFF", "#FF7598"],
+    colors: ["#8E7DBE", "#BCA37F", "#EEE3CB"],
   },
   {
-    name: "synthwave",
-    label: "Synthwave",
+    name: "lofi",
+    label: "Lofi",
     colors: ["#2D1B69", "#FF1E9E", "#1EDBFF"],
   },
   {
